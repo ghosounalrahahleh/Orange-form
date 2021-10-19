@@ -1,0 +1,35 @@
+* {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+.btn1 {
+    background-color: #FF8210;
+
+}
+input[type=checkbox]:checked{
+    background-color: #FF8210;
+    color: black;
+}
+.btn1:hover {
+    color: white !important;
+}
+
+.btn:hover {
+    background: #000;
+    color: white;
+}
+
+.btn2:hover a {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #FF8210 !important;
+}
+@media(max-width:760px){
+    .navigation{
+        display:none !important;
+    }
+}
