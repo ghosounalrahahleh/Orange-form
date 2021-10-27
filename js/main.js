@@ -10,8 +10,10 @@ var passErorr = document.querySelector(".passErorr");
 var checkErorr = document.querySelector(".checkErorr");
 
 function submitForm(e) {
-  var valid = false;
-
+  var validEmail = false;
+var validNumber=false;
+var validPass=false;
+var validCheck=false;
   const eFoem =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const nubmberTest = /077[0-9]{7}/gm;
@@ -22,27 +24,27 @@ function submitForm(e) {
   if (!eFoem.test(email.value)) {
     emailErorr.innerHTML = "Your email is not valid!";
     emailErorr.style.color = "red";
-  }
+  }else validEmail=true;
 
   // check number
-  else if (!nubmberTest.test(number.value)) {
+   if (!nubmberTest.test(number.value)) {
     numberErorr.innerHTML = "Your number is not valid!";
     numberErorr.style.color = "red";
-  }
+  }else validNumber=true;
 
   // check password
-  else if (!passTest.test(password.value)) {
+  if (!passTest.test(password.value)) {
     passErorr.innerHTML = "Your password not secure!";
     passErorr.style.color = "red";
-  }
+  }else  validPass=true;
 
   // check checkbox
-  else if (ch.checked == false) {
+  if (ch.checked == false) {
     checkErorr.innerHTML = "Your have to check this feild!";
     checkErorr.style.color = "red";
-  } else valid = true;
+  } else validCheck = true;
 
-  if (valid === false) {
+  if (validEmail === false || validNumber ===false || validPass===false || validCheck===false) {
     e.preventDefault();
   } else {
     e.defaultPrevented = false;
